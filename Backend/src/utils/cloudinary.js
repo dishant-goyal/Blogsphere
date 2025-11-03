@@ -1,7 +1,7 @@
 import { v2 as cloudinary } from "cloudinary";
 
 import fs from "fs"
-import { ApiError } from "./ApiError.js";
+import { ApiError } from "./apiError.js";
 
 
 const uploadOnCloudinary=async(filePath,folder)=>{

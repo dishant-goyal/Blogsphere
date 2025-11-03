@@ -73,10 +73,11 @@ export const loginUser = asyncHandler(async (req, res) => {
   
  res.cookie("token", token, {
   httpOnly: true,
-  secure: false,        // ✅ Required for HTTPS (Render)
-  sameSite: "None",    // ✅ Allows cookies across domains (Vercel <-> Render)
-  maxAge: 24 * 60 * 60 * 1000, // 1 day
+  secure: process.env.NODE_ENV === "production", // ✅ true on Render
+  sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax", // ✅ allows cross-site
+  maxAge: 24 * 60 * 60 * 1000,
 });
+
 
   
   const sanitizedUser = {

@@ -74,7 +74,7 @@ export const loginUser = asyncHandler(async (req, res) => {
  res.cookie("token", token, {
   httpOnly: true,
   secure: process.env.NODE_ENV === "production", // ✅ true on Render
-  sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax", // ✅ allows cross-site
+  sameSite: "None", // ✅ allows cross-site
   maxAge: 24 * 60 * 60 * 1000,
 });
 

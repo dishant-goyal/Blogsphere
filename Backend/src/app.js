@@ -12,12 +12,12 @@ const app=express()
 
 const allowedOrigins = [
   "http://localhost:5173", // React dev server
-  "https://yourdomain.com", // production domain
+  "https://blogsphere-orcin.vercel.app/", // production domain
 ];
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: allowedOrigins,
     credentials: true, // ✅ Required for cookies
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // optional but good practice
     allowedHeaders: ["Content-Type", "Authorization"], // optional

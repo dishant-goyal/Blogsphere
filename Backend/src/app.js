@@ -12,7 +12,7 @@ const app=express()
 
 const allowedOrigins = [
   "http://localhost:5173", // React dev server
-  "https://blogsphere-orcin.vercel.app/", // production domain
+  "https://blogsphere-orcin.vercel.app", // production domain
 ];
 
 app.use(

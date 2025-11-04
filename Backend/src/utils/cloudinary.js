@@ -12,6 +12,7 @@ const uploadOnCloudinary=async(filePath,folder)=>{
         api_secret:process.env.CLOUD_SECRET
     })
 
+    
     try {
         if(!filePath){
             throw new ApiError(400,"File path is required")

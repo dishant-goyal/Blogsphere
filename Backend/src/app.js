@@ -8,6 +8,8 @@ import postRoutes from "./routes/post.routes.js"
 dotenv.config()
 const app=express()
 
+
+
 const allowedOrigins = [
   "http://localhost:5173", // React dev server
   "https://yourdomain.com", // production domain
@@ -15,13 +17,10 @@ const allowedOrigins = [
 
 app.use(
   cors({
-    origin: function (origin, callback) {
-      // Allow requests with no origin (like mobile apps, Postman)
-      if (!origin) return callback(null, true);
-      if (allowedOrigins.includes(origin)) return callback(null, true);
-      return callback(new Error("Not allowed by CORS"));
-    },
-    credentials: true, // if using cookies / sessions
+    origin: "http://localhost:5173",
+    credentials: true, // ✅ Required for cookies
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // optional but good practice
+    allowedHeaders: ["Content-Type", "Authorization"], // optional
   })
 );
 

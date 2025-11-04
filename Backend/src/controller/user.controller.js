@@ -71,12 +71,15 @@ export const loginUser = asyncHandler(async (req, res) => {
   });
 
   
- res.cookie("token", token, {
+res.cookie("token", token, {
   httpOnly: true,
-  secure: process.env.NODE_ENV === "production", // ✅ true on Render
-  sameSite: "None", // ✅ allows cross-site
-  maxAge: 24 * 60 * 60 * 1000,
+  secure: true,      // ✅ required on HTTPS
+  sameSite: "none",  // ✅ allows cross-domain cookies
 });
+
+
+
+
 
 
   

@@ -59,6 +59,7 @@ function Signup() {
             <div className="mt-4 space-y-2">
               <span>Name</span>
               <br />
+        
               <input
                 type="text"
                 placeholder="Enter your name"
